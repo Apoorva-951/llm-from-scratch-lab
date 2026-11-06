@@ -1,0 +1,35 @@
+{
+  "emb_dim": 384,
+  "rows": [
+    {
+      "vocab_size": 2048,
+      "merges": 1791,
+      "chars_per_token": 3.676,
+      "tokens_per_1k_chars": 272.0,
+      "embedding_params_at_384": 1572864,
+      "train_seconds": 20.2,
+      "sample_token_count": 29,
+      "roundtrip_exact": true
+    },
+    {
+      "vocab_size": 8192,
+      "merges": 7935,
+      "chars_per_token": 4.172,
+      "tokens_per_1k_chars": 239.7,
+      "embedding_params_at_384": 6291456,
+      "train_seconds": 64.1,
+      "sample_token_count": 29,
+      "roundtrip_exact": true
+    },
+    {
+      "vocab_size": 10622,
+      "merges": 10365,
+      "chars_per_token": 4.191,
+      "tokens_per_1k_chars": 238.6,
+      "embedding_params_at_384": 8157696,
+      "train_seconds": 74.4,
+      "sample_token_count": 29,
+      "roundtrip_exact": true
+    }
+  ]
+}

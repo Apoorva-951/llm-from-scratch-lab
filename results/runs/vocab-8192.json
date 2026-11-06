@@ -1,0 +1,144 @@
+{
+  "name": "vocab-8192",
+  "hypothesis": "Vocabulary 8192: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+  "config": {
+    "name": "vocab-8192",
+    "hypothesis": "Vocabulary 8192: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "model": {
+      "vocab_size": 8192,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-8192.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 17030400,
+    "embedding": 3244032,
+    "output_head": 3145728,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.9569,
+      "val_loss": 4.3662,
+      "val_perplexity": 78.746,
+      "elapsed_s": 77.7
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0988,
+      "val_loss": 3.9189,
+      "val_perplexity": 50.348,
+      "elapsed_s": 159.2
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.762,
+      "val_loss": 3.7225,
+      "val_perplexity": 41.369,
+      "elapsed_s": 237.3
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5617,
+      "val_loss": 3.5341,
+      "val_perplexity": 34.265,
+      "elapsed_s": 322.2
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3766,
+      "val_loss": 3.3942,
+      "val_perplexity": 29.79,
+      "elapsed_s": 407.6
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2715,
+      "val_loss": 3.2903,
+      "val_perplexity": 26.851,
+      "elapsed_s": 496.3
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1779,
+      "val_loss": 3.1971,
+      "val_perplexity": 24.461,
+      "elapsed_s": 585.8
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.1105,
+      "val_loss": 3.1318,
+      "val_perplexity": 22.915,
+      "elapsed_s": 670.1
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0625,
+      "val_loss": 3.1388,
+      "val_perplexity": 23.076,
+      "elapsed_s": 755.1
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.0474,
+      "val_loss": 3.1036,
+      "val_perplexity": 22.277,
+      "elapsed_s": 839.9
+    }
+  ],
+  "final_train_loss": 3.0474,
+  "final_val_loss": 3.1036,
+  "final_val_perplexity": 22.277,
+  "best_val_loss": 3.1035673141479494,
+  "tokens_per_second": 5949.7,
+  "wall_seconds": 839.9,
+  "peak_memory_mb": 644.7,
+  "samples": [
+    "Once upon a time there was a little girl named Lucy. She had a very happy little girl. One day, she decided to play and look at the sky. \nAs Lucy came, she saw a little girl. She was very excited when she came up and asked her mom if she could help them do. Then",
+    "Lily saw a little girl Lily who loved to play with her toys. She loved to play with her toys, but she was so happy. He wanted to wear it and not like to eat more yummy. Lily didn't like to be nice and he was happy.\n<|endoftext|>",
+    "The little boy was very happy.\n<|endoftext|>"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "name": "vocab-2048",
+  "hypothesis": "Vocabulary 2048: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+  "config": {
+    "name": "vocab-2048",
+    "hypothesis": "Vocabulary 2048: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5096,
+      "val_loss": 4.3224,
+      "val_perplexity": 75.372,
+      "elapsed_s": 68.7
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0416,
+      "val_loss": 3.8879,
+      "val_perplexity": 48.809,
+      "elapsed_s": 145.4
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7138,
+      "val_loss": 3.6129,
+      "val_perplexity": 37.074,
+      "elapsed_s": 212.8
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.4945,
+      "val_loss": 3.4342,
+      "val_perplexity": 31.008,
+      "elapsed_s": 282.6
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3194,
+      "val_loss": 3.3075,
+      "val_perplexity": 27.316,
+      "elapsed_s": 350.6
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2036,
+      "val_loss": 3.2559,
+      "val_perplexity": 25.944,
+      "elapsed_s": 421.4
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1136,
+      "val_loss": 3.1266,
+      "val_perplexity": 22.796,
+      "elapsed_s": 504.7
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0404,
+      "val_loss": 3.1013,
+      "val_perplexity": 22.227,
+      "elapsed_s": 591.6
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.9974,
+      "val_loss": 3.041,
+      "val_perplexity": 20.927,
+      "elapsed_s": 675.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9644,
+      "val_loss": 3.0374,
+      "val_perplexity": 20.85,
+      "elapsed_s": 758.5
+    }
+  ],
+  "final_train_loss": 2.9644,
+  "final_val_loss": 3.0374,
+  "final_val_perplexity": 20.85,
+  "best_val_loss": 3.0373618761698404,
+  "tokens_per_second": 6588.2,
+  "wall_seconds": 758.5,
+  "peak_memory_mb": 399.6,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play in her toys. One day, she went to the park and saw that she was playing in the park. She saw a big ball and wanted to play with it. She asked her mommy if they could come into the",
+    "Lily saw a big dog. The dog took Lily and started to catch it. She ran into the ball.\n\"Hello, Lily, but it's sad. What are you okay?\" she said.\n\"Hey, can I play with him with you anymore,\" Lily said.\nLily gave Sam a",
+    "The little boy was very happy. He thanked his friend, and his friends decided to play with his friends.\n<|endoftext|>"
+  ]
+}

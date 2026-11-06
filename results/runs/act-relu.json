@@ -1,0 +1,144 @@
+{
+  "name": "act-relu",
+  "hypothesis": "ReLU instead of GELU: a hard zero below zero rather than a smooth gate. Cheaper, and the classic comparison.",
+  "config": {
+    "name": "act-relu",
+    "hypothesis": "ReLU instead of GELU: a hard zero below zero rather than a smooth gate. Cheaper, and the classic comparison.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "relu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5535,
+      "val_loss": 4.3492,
+      "val_perplexity": 77.418,
+      "elapsed_s": 56.8
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0567,
+      "val_loss": 3.8978,
+      "val_perplexity": 49.294,
+      "elapsed_s": 115.6
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7137,
+      "val_loss": 3.6123,
+      "val_perplexity": 37.05,
+      "elapsed_s": 171.8
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.494,
+      "val_loss": 3.4334,
+      "val_perplexity": 30.983,
+      "elapsed_s": 228.2
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3201,
+      "val_loss": 3.308,
+      "val_perplexity": 27.331,
+      "elapsed_s": 284.5
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2041,
+      "val_loss": 3.2599,
+      "val_perplexity": 26.047,
+      "elapsed_s": 346.8
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1154,
+      "val_loss": 3.1291,
+      "val_perplexity": 22.854,
+      "elapsed_s": 411.0
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0411,
+      "val_loss": 3.1041,
+      "val_perplexity": 22.289,
+      "elapsed_s": 469.3
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.9989,
+      "val_loss": 3.0429,
+      "val_perplexity": 20.965,
+      "elapsed_s": 524.7
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9662,
+      "val_loss": 3.0389,
+      "val_perplexity": 20.882,
+      "elapsed_s": 578.8
+    }
+  ],
+  "final_train_loss": 2.9662,
+  "final_val_loss": 3.0389,
+  "final_val_perplexity": 20.882,
+  "best_val_loss": 3.038874650001526,
+  "tokens_per_second": 8633.6,
+  "wall_seconds": 578.8,
+  "peak_memory_mb": 399.6,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was so excited that she went outside to play with her friends. One day, she saw a big, big, she wanted to play with. She asked the dog, \"Can I help you?\"\nLily smiled and said, \"No, I'm",
+    "Lily saw a big red lemo. She wanted to help her mommy. She ran to her friend, so much fun.\nThe boy looked up and saw that she knew it was too much. Lily was happy too. She looked around and went to dove to a new toys. Lily gave Sam a",
+    "The little boy was very happy. He thanked his friend, and his friends sat for a new house. Now the story is that it would be fun and share all of himself.\n<|endoftext|>"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "name": "control-no-position",
+  "hypothesis": "Without positional information attention is permutation-invariant, so the model can only learn token frequencies. Loss should worsen clearly against baseline.",
+  "config": {
+    "name": "control-no-position",
+    "hypothesis": "Without positional information attention is permutation-invariant, so the model can only learn token frequencies. Loss should worsen clearly against baseline.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "none",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12213504,
+    "embedding": 786432,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.4786,
+      "val_loss": 4.2846,
+      "val_perplexity": 72.577,
+      "elapsed_s": 86.9
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 3.9936,
+      "val_loss": 3.8413,
+      "val_perplexity": 46.585,
+      "elapsed_s": 173.1
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.6821,
+      "val_loss": 3.6069,
+      "val_perplexity": 36.852,
+      "elapsed_s": 262.9
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.509,
+      "val_loss": 3.4728,
+      "val_perplexity": 32.227,
+      "elapsed_s": 358.5
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3776,
+      "val_loss": 3.38,
+      "val_perplexity": 29.369,
+      "elapsed_s": 439.8
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2887,
+      "val_loss": 3.3466,
+      "val_perplexity": 28.407,
+      "elapsed_s": 527.2
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.2145,
+      "val_loss": 3.2283,
+      "val_perplexity": 25.237,
+      "elapsed_s": 612.5
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.1497,
+      "val_loss": 3.2148,
+      "val_perplexity": 24.898,
+      "elapsed_s": 691.9
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.1118,
+      "val_loss": 3.1616,
+      "val_perplexity": 23.609,
+      "elapsed_s": 768.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.0818,
+      "val_loss": 3.1511,
+      "val_perplexity": 23.362,
+      "elapsed_s": 844.2
+    }
+  ],
+  "final_train_loss": 3.0818,
+  "final_val_loss": 3.1511,
+  "final_val_perplexity": 23.362,
+  "best_val_loss": 3.1511055628458657,
+  "tokens_per_second": 5919.4,
+  "wall_seconds": 844.2,
+  "peak_memory_mb": 391.7,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She loved to help her room and her mommy. Lily loved to draw a big cow for a big bag that she loved to get it.\n<|endoftext|>",
+    "Lily saw a big dog dog and said, \"Lily, you and you want to be my dog?\" The dog said, \"Thank you, mom, I'm sorry, Mom. I'm not too.\"\nThe dog said, \"Yes, Mom. Let's go away and have to play with me?\"",
+    "The little boy was very curious to be a special thing and. He wanted to be a new way down. \nThe little boy was very happy to be the little boy. Ell loved, but he would always be careful and he would always make things from. He knew he would always be happy and they were very much"
+  ]
+}

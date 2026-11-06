@@ -1,0 +1,144 @@
+{
+  "name": "norm-rmsnorm",
+  "hypothesis": "RMSNorm drops mean subtraction and the shift parameter. Tests whether re-centring contributes anything at this scale.",
+  "config": {
+    "name": "norm-rmsnorm",
+    "hypothesis": "RMSNorm drops mean subtraction and the shift parameter. Tests whether re-centring contributes anything at this scale.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "rmsnorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12306816,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10635648
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.516,
+      "val_loss": 4.3267,
+      "val_perplexity": 75.695,
+      "elapsed_s": 56.7
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0452,
+      "val_loss": 3.8913,
+      "val_perplexity": 48.973,
+      "elapsed_s": 114.5
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7165,
+      "val_loss": 3.6149,
+      "val_perplexity": 37.149,
+      "elapsed_s": 172.3
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.4968,
+      "val_loss": 3.4362,
+      "val_perplexity": 31.07,
+      "elapsed_s": 230.5
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3221,
+      "val_loss": 3.3105,
+      "val_perplexity": 27.398,
+      "elapsed_s": 288.4
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2068,
+      "val_loss": 3.2594,
+      "val_perplexity": 26.034,
+      "elapsed_s": 347.3
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1164,
+      "val_loss": 3.1287,
+      "val_perplexity": 22.844,
+      "elapsed_s": 406.5
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0434,
+      "val_loss": 3.1047,
+      "val_perplexity": 22.303,
+      "elapsed_s": 464.9
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0002,
+      "val_loss": 3.0432,
+      "val_perplexity": 20.973,
+      "elapsed_s": 523.8
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.967,
+      "val_loss": 3.0398,
+      "val_perplexity": 20.902,
+      "elapsed_s": 582.8
+    }
+  ],
+  "final_train_loss": 2.967,
+  "final_val_loss": 3.0398,
+  "final_val_perplexity": 20.902,
+  "best_val_loss": 3.039829134941101,
+  "tokens_per_second": 8574.3,
+  "wall_seconds": 582.8,
+  "peak_memory_mb": 399.1,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play in her toys. One day, Lily's mommy saw a big bag that was a bird in the bird. She couldn't see the bird who wanted to help it. She held it and put it back to her bag",
+    "Lily saw a big dog. The girl took her to the tree, and her friends were not to be careful.\nThe animals were wet, but the bird was happy. The bird was scared. The bird was not sad. The bird looked very pretty and did notice. The water didn't know what to",
+    "The little boy was very happy. He thanked his friend, and his friends decided to play with his friends.\n<|endoftext|>"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "name": "context-512",
+  "hypothesis": "Double the context. Quadratic attention cost should reduce throughput; TinyStories are short, so the benefit may be small.",
+  "config": {
+    "name": "context-512",
+    "hypothesis": "Double the context. Quadratic attention cost should reduce throughput; TinyStories are short, so the benefit may be small.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 512,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 8,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12410112,
+    "embedding": 983040,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.505,
+      "val_loss": 4.3681,
+      "val_perplexity": 78.893,
+      "elapsed_s": 77.0
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.1042,
+      "val_loss": 3.9744,
+      "val_perplexity": 53.217,
+      "elapsed_s": 164.4
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.8166,
+      "val_loss": 3.8058,
+      "val_perplexity": 44.963,
+      "elapsed_s": 243.4
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.6548,
+      "val_loss": 3.6417,
+      "val_perplexity": 38.158,
+      "elapsed_s": 320.6
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.5229,
+      "val_loss": 3.5197,
+      "val_perplexity": 33.775,
+      "elapsed_s": 395.5
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.4168,
+      "val_loss": 3.4257,
+      "val_perplexity": 30.745,
+      "elapsed_s": 475.0
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.3021,
+      "val_loss": 3.313,
+      "val_perplexity": 27.468,
+      "elapsed_s": 547.5
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.2633,
+      "val_loss": 3.2759,
+      "val_perplexity": 26.468,
+      "elapsed_s": 620.8
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.2067,
+      "val_loss": 3.2251,
+      "val_perplexity": 25.155,
+      "elapsed_s": 699.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.1587,
+      "val_loss": 3.195,
+      "val_perplexity": 24.41,
+      "elapsed_s": 772.5
+    }
+  ],
+  "final_train_loss": 3.1587,
+  "final_val_loss": 3.195,
+  "final_val_perplexity": 24.41,
+  "best_val_loss": 3.1949779669443767,
+  "tokens_per_second": 6468.8,
+  "wall_seconds": 772.5,
+  "peak_memory_mb": 403.9,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was so excited that she could use the dry to do on the garden.\nOne day, she couldn't see the chunts, she started to the door. It was so happy to help she would be dull and keep the ground",
+    "Lily saw a boy who was very sad. He wanted to help him he was so he said to be home. \nJohn said, \"Where do you want to be careful,\" he asked.\nSo he was too far away from the boy and he was always as a safe. He wanted to go back",
+    "The little boy was very happy. he thanked his friend.\n<|endoftext|>"
+  ]
+}

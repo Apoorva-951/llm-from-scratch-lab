@@ -1,0 +1,144 @@
+{
+  "name": "layers-2",
+  "hypothesis": "Shallow: 2 layers. Tests how much depth contributes at fixed width.",
+  "config": {
+    "name": "layers-2",
+    "hypothesis": "Shallow: 2 layers. Tests how much depth contributes at fixed width.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 2,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 5218560,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 3547392
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5459,
+      "val_loss": 4.3262,
+      "val_perplexity": 75.657,
+      "elapsed_s": 32.6
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0275,
+      "val_loss": 3.8711,
+      "val_perplexity": 47.993,
+      "elapsed_s": 65.5
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7154,
+      "val_loss": 3.6263,
+      "val_perplexity": 37.572,
+      "elapsed_s": 100.5
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5178,
+      "val_loss": 3.4576,
+      "val_perplexity": 31.741,
+      "elapsed_s": 129.3
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3481,
+      "val_loss": 3.333,
+      "val_perplexity": 28.022,
+      "elapsed_s": 157.9
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2347,
+      "val_loss": 3.2857,
+      "val_perplexity": 26.727,
+      "elapsed_s": 187.6
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1536,
+      "val_loss": 3.1607,
+      "val_perplexity": 23.586,
+      "elapsed_s": 217.5
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0861,
+      "val_loss": 3.1442,
+      "val_perplexity": 23.201,
+      "elapsed_s": 248.6
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0495,
+      "val_loss": 3.0926,
+      "val_perplexity": 22.033,
+      "elapsed_s": 275.7
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.0203,
+      "val_loss": 3.0859,
+      "val_perplexity": 21.887,
+      "elapsed_s": 306.4
+    }
+  ],
+  "final_train_loss": 3.0203,
+  "final_val_loss": 3.0859,
+  "final_val_perplexity": 21.887,
+  "best_val_loss": 3.085883649190267,
+  "tokens_per_second": 16309.1,
+  "wall_seconds": 306.4,
+  "peak_memory_mb": 184.5,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. One day, she was a little girl named Lily. She went on the garden to take a special friend, but she was playing in the park. \nLater that day, Lily's mom said, \"Lily, you can see it is my friend!\"",
+    "Lily saw a big red and wanted to it. It started to catch it. It flew away and flew away.\nMom said, \"Where do you want to be!\" The flower washile he said to be careful with his tail. It was not nice to be safe.\nLily gave Sam a",
+    "The little boy was very sad. He thanked his friend, but his mom said goodbye, \"I will be scared but I want to listen to the conestroy. I will come back with you.\"\nThe end of the other kids agreed and they went back home. They all played with the happy and went"
+  ]
+}

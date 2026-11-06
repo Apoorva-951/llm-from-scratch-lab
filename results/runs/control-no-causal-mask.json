@@ -1,0 +1,144 @@
+{
+  "name": "control-no-causal-mask",
+  "hypothesis": "Removing the causal mask lets the model attend to future tokens, so next-token prediction becomes trivial. Validation loss should collapse far below baseline. If it does not, masking is broken.",
+  "config": {
+    "name": "control-no-causal-mask",
+    "hypothesis": "Removing the causal mask lets the model attend to future tokens, so next-token prediction becomes trivial. Validation loss should collapse far below baseline. If it does not, masking is broken.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": false
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.4241,
+      "val_loss": 4.2405,
+      "val_perplexity": 69.44,
+      "elapsed_s": 68.4
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 3.9584,
+      "val_loss": 3.7902,
+      "val_perplexity": 44.266,
+      "elapsed_s": 142.1
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 2.0589,
+      "val_loss": 0.3648,
+      "val_perplexity": 1.44,
+      "elapsed_s": 219.4
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 0.1455,
+      "val_loss": 0.0647,
+      "val_perplexity": 1.067,
+      "elapsed_s": 294.0
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 0.0476,
+      "val_loss": 0.0389,
+      "val_perplexity": 1.04,
+      "elapsed_s": 367.9
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 0.034,
+      "val_loss": 0.0321,
+      "val_perplexity": 1.033,
+      "elapsed_s": 446.1
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 0.0288,
+      "val_loss": 0.029,
+      "val_perplexity": 1.029,
+      "elapsed_s": 525.7
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 0.0261,
+      "val_loss": 0.0261,
+      "val_perplexity": 1.026,
+      "elapsed_s": 606.0
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 0.0251,
+      "val_loss": 0.0246,
+      "val_perplexity": 1.025,
+      "elapsed_s": 683.5
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 0.0244,
+      "val_loss": 0.0244,
+      "val_perplexity": 1.025,
+      "elapsed_s": 769.7
+    }
+  ],
+  "final_train_loss": 0.0244,
+  "final_val_loss": 0.0244,
+  "final_val_perplexity": 1.025,
+  "best_val_loss": 0.024448667963345844,
+  "tokens_per_second": 6492.3,
+  "wall_seconds": 769.7,
+  "peak_memory_mb": 392.6,
+  "samples": [
+    "Once upon a time green upon a green a upon a care a sound upon a time aill a butterfly green enough next sound a hard green a hard for a time a time a time about a hard green time butterfly a green time a time hard time a time a time a sound aFrom a delicious a time a time",
+    "Lily saw a nextLily sawLily saw saw sawLily saw a next sawLily sawLily sawLily sawLily next sawLily sawLily sawLily saw sawLily sawLily saw a aaterLilyLily saw sawLily aLily sawLily saw saw sawLily sawLily sawLily sawLily sawLily found sawLily saw",
+    "The little boy was very little boy very boy little boy little boy boy little boy was little boy boy boy very boy little boy very boy very very boy little boy was boy was boy boy was boy very boy little boy boy very little boy was boy was boy little boy very boy was boy little boy who was boy boy was wanted"
+  ]
+}

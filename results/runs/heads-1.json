@@ -1,0 +1,144 @@
+{
+  "name": "heads-1",
+  "hypothesis": "One head: same parameter count, but a single attention pattern per layer instead of six specialised subspaces.",
+  "config": {
+    "name": "heads-1",
+    "hypothesis": "One head: same parameter count, but a single attention pattern per layer instead of six specialised subspaces.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 1,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5129,
+      "val_loss": 4.3202,
+      "val_perplexity": 75.207,
+      "elapsed_s": 66.1
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0268,
+      "val_loss": 3.8563,
+      "val_perplexity": 47.288,
+      "elapsed_s": 133.1
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.6518,
+      "val_loss": 3.5315,
+      "val_perplexity": 34.174,
+      "elapsed_s": 200.3
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.4007,
+      "val_loss": 3.3365,
+      "val_perplexity": 28.12,
+      "elapsed_s": 263.3
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.2174,
+      "val_loss": 3.2028,
+      "val_perplexity": 24.602,
+      "elapsed_s": 327.9
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.097,
+      "val_loss": 3.1462,
+      "val_perplexity": 23.247,
+      "elapsed_s": 393.9
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.0051,
+      "val_loss": 3.0129,
+      "val_perplexity": 20.346,
+      "elapsed_s": 461.1
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 2.9303,
+      "val_loss": 2.988,
+      "val_perplexity": 19.847,
+      "elapsed_s": 528.1
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.8856,
+      "val_loss": 2.9279,
+      "val_perplexity": 18.688,
+      "elapsed_s": 587.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.8548,
+      "val_loss": 2.9238,
+      "val_perplexity": 18.613,
+      "elapsed_s": 646.1
+    }
+  ],
+  "final_train_loss": 2.8548,
+  "final_val_loss": 2.9238,
+  "final_val_perplexity": 18.613,
+  "best_val_loss": 2.923849852879842,
+  "tokens_per_second": 7734.3,
+  "wall_seconds": 646.1,
+  "peak_memory_mb": 372.1,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play outside. One day, she saw a cow for a small cat named Benny. He looked at the calm and asked the cat to the cat.\n\"I want to be dull?\" Lily said.",
+    "Lily saw a big red lemon. She wanted to help, but her mom said, \"Let's watch my toy. That was not like the piron.\"\nLily felt sorry. She said, \"Mommy, can I play with it with you. You'll always be careful and be kind.",
+    "The little boy was very happy. He thanked his friend and gave his the little boy, elderly lady. She gave him a big hug and. He knew he would help him happy.\nThe poor lady was proud of his friends. She told him the little girl because she was happy. She wished she"
+  ]
+}

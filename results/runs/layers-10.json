@@ -1,0 +1,144 @@
+{
+  "name": "layers-10",
+  "hypothesis": "Deeper at the same width. More parameters and more compute per token, so throughput should drop.",
+  "config": {
+    "name": "layers-10",
+    "hypothesis": "Deeper at the same width. More parameters and more compute per token, so throughput should drop.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 10,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 19405056,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 17733888
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.4947,
+      "val_loss": 4.3574,
+      "val_perplexity": 78.057,
+      "elapsed_s": 127.5
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0821,
+      "val_loss": 3.9328,
+      "val_perplexity": 51.049,
+      "elapsed_s": 288.0
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7561,
+      "val_loss": 3.6555,
+      "val_perplexity": 38.686,
+      "elapsed_s": 426.1
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.535,
+      "val_loss": 3.4743,
+      "val_perplexity": 32.276,
+      "elapsed_s": 580.4
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3585,
+      "val_loss": 3.3413,
+      "val_perplexity": 28.256,
+      "elapsed_s": 695.0
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.234,
+      "val_loss": 3.2825,
+      "val_perplexity": 26.641,
+      "elapsed_s": 809.9
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1416,
+      "val_loss": 3.1531,
+      "val_perplexity": 23.409,
+      "elapsed_s": 926.6
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.063,
+      "val_loss": 3.1195,
+      "val_perplexity": 22.635,
+      "elapsed_s": 1040.8
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0172,
+      "val_loss": 3.0589,
+      "val_perplexity": 21.304,
+      "elapsed_s": 1155.4
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9804,
+      "val_loss": 3.0512,
+      "val_perplexity": 21.14,
+      "elapsed_s": 1271.4
+    }
+  ],
+  "final_train_loss": 2.9804,
+  "final_val_loss": 3.0512,
+  "final_val_perplexity": 21.14,
+  "best_val_loss": 3.0511528730392454,
+  "tokens_per_second": 3930.4,
+  "wall_seconds": 1271.4,
+  "peak_memory_mb": 664.6,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play all around in a big house. One day, she found her big, shiny coatorks. She couldn't see the doors were big and big red and she was so happy. \nLily's mom",
+    "Lily saw a big dog with. She took her toy car and got very angry. She said no, \"Stop it's okay, Lily?\". She looked at her friend, \"What happened?\" \nHer mommy said, \"Don't worry, that's apectk. It's a bit",
+    "The little boy was very happy. He thanked his friend, and his friends played together, and had a new dog.\n<|endoftext|>"
+  ]
+}

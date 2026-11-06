@@ -1,0 +1,152 @@
+{
+  "name": "context-128",
+  "hypothesis": "Half the context. Attention cost is quadratic in sequence length, so throughput should rise while long-range structure is lost.",
+  "config": {
+    "name": "context-128",
+    "hypothesis": "Half the context. Attention cost is quadratic in sequence length, so throughput should rise while long-range structure is lost.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 128,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12262656,
+    "embedding": 835584,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 244,
+      "tokens_seen": 499712,
+      "train_loss": 5.131,
+      "val_loss": 4.0752,
+      "val_perplexity": 58.864,
+      "elapsed_s": 68.9
+    },
+    {
+      "step": 488,
+      "tokens_seen": 999424,
+      "train_loss": 3.7612,
+      "val_loss": 3.5604,
+      "val_perplexity": 35.177,
+      "elapsed_s": 137.4
+    },
+    {
+      "step": 732,
+      "tokens_seen": 1499136,
+      "train_loss": 3.4016,
+      "val_loss": 3.3342,
+      "val_perplexity": 28.056,
+      "elapsed_s": 206.3
+    },
+    {
+      "step": 976,
+      "tokens_seen": 1998848,
+      "train_loss": 3.1835,
+      "val_loss": 3.1471,
+      "val_perplexity": 23.268,
+      "elapsed_s": 274.5
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 2498560,
+      "train_loss": 3.0184,
+      "val_loss": 3.0411,
+      "val_perplexity": 20.929,
+      "elapsed_s": 342.8
+    },
+    {
+      "step": 1464,
+      "tokens_seen": 2998272,
+      "train_loss": 2.9223,
+      "val_loss": 2.9561,
+      "val_perplexity": 19.222,
+      "elapsed_s": 411.5
+    },
+    {
+      "step": 1708,
+      "tokens_seen": 3497984,
+      "train_loss": 2.807,
+      "val_loss": 2.8415,
+      "val_perplexity": 17.141,
+      "elapsed_s": 478.4
+    },
+    {
+      "step": 1952,
+      "tokens_seen": 3997696,
+      "train_loss": 2.7299,
+      "val_loss": 2.7919,
+      "val_perplexity": 16.312,
+      "elapsed_s": 547.2
+    },
+    {
+      "step": 2196,
+      "tokens_seen": 4497408,
+      "train_loss": 2.6864,
+      "val_loss": 2.7451,
+      "val_perplexity": 15.566,
+      "elapsed_s": 616.1
+    },
+    {
+      "step": 2440,
+      "tokens_seen": 4997120,
+      "train_loss": 2.6591,
+      "val_loss": 2.7124,
+      "val_perplexity": 15.065,
+      "elapsed_s": 683.9
+    },
+    {
+      "step": 2441,
+      "tokens_seen": 4999168,
+      "train_loss": 2.7703,
+      "val_loss": 2.7123,
+      "val_perplexity": 15.064,
+      "elapsed_s": 686.7
+    }
+  ],
+  "final_train_loss": 2.7703,
+  "final_val_loss": 2.7123,
+  "final_val_perplexity": 15.064,
+  "best_val_loss": 2.712315861384074,
+  "tokens_per_second": 7280.0,
+  "wall_seconds": 686.7,
+  "peak_memory_mb": 273.2,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play all day long. One day, she went to the park and saw a beautiful tree near the tree. She wanted to see what was inside the tree and she wanted to play too.\nOne day, Lily's mom",
+    "Lily saw a big red leado. She wanted to take it to her room, but she was too scared. The little girl said, \"It can you get not for it, for you!\"\nThe little girl said, \"Don't worry, I will be a safe.\" They found the toy at",
+    "The little boy was very sad, he decided to go out to the park again. He walked and saw a big tree. He ran and tried to catch the bush. The big dog started to run, but the tree was too fast to be careful. The dog saw the dog's ball and started to cry. The dog"
+  ]
+}

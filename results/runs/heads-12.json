@@ -1,0 +1,144 @@
+{
+  "name": "heads-12",
+  "hypothesis": "Twelve heads: more subspaces, each of dimension 32 instead of 64. Tests whether head count or per-head width matters more.",
+  "config": {
+    "name": "heads-12",
+    "hypothesis": "Twelve heads: more subspaces, each of dimension 32 instead of 64. Tests whether head count or per-head width matters more.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 12,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5127,
+      "val_loss": 4.3246,
+      "val_perplexity": 75.532,
+      "elapsed_s": 87.7
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0458,
+      "val_loss": 3.895,
+      "val_perplexity": 49.158,
+      "elapsed_s": 186.1
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7263,
+      "val_loss": 3.6344,
+      "val_perplexity": 37.877,
+      "elapsed_s": 277.3
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5238,
+      "val_loss": 3.4679,
+      "val_perplexity": 32.069,
+      "elapsed_s": 371.4
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3572,
+      "val_loss": 3.3446,
+      "val_perplexity": 28.349,
+      "elapsed_s": 459.0
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2431,
+      "val_loss": 3.2925,
+      "val_perplexity": 26.909,
+      "elapsed_s": 548.5
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1533,
+      "val_loss": 3.1686,
+      "val_perplexity": 23.774,
+      "elapsed_s": 633.9
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0804,
+      "val_loss": 3.1426,
+      "val_perplexity": 23.163,
+      "elapsed_s": 741.8
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0384,
+      "val_loss": 3.081,
+      "val_perplexity": 21.779,
+      "elapsed_s": 845.2
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.0056,
+      "val_loss": 3.0764,
+      "val_perplexity": 21.681,
+      "elapsed_s": 946.9
+    }
+  ],
+  "final_train_loss": 3.0056,
+  "final_val_loss": 3.0764,
+  "final_val_perplexity": 21.681,
+  "best_val_loss": 3.0764473915100097,
+  "tokens_per_second": 5277.3,
+  "wall_seconds": 946.9,
+  "peak_memory_mb": 393.0,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She loved to help her room and her friends. One day, she saw a cow of a small porniate of it. She wanted to see it very much.\nLily was happy and gave Lily a good friends. She had a new",
+    "Lily saw a big red car. She took it closer to it, and her mom said, \"Let's go on the sky. Lily, like the swings. This is a good job. But please ask what you help you make it. That's not yours a new toys. I like one.\"",
+    "The little boy was very happy. He thanked his friend, and his friends decided to play.\n<|endoftext|>"
+  ]
+}

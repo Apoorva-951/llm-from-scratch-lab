@@ -1,0 +1,144 @@
+{
+  "name": "act-swiglu",
+  "hypothesis": "SwiGLU: a gated MLP as used by Llama, with hidden width scaled by 2/3 to keep parameters comparable.",
+  "config": {
+    "name": "act-swiglu",
+    "hypothesis": "SwiGLU: a gated MLP as used by Llama, with hidden width scaled by 2/3 to keep parameters comparable.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "swiglu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12300288,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10629120
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.6773,
+      "val_loss": 4.4478,
+      "val_perplexity": 85.435,
+      "elapsed_s": 54.0
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.119,
+      "val_loss": 3.9402,
+      "val_perplexity": 51.429,
+      "elapsed_s": 108.4
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7562,
+      "val_loss": 3.6564,
+      "val_perplexity": 38.723,
+      "elapsed_s": 166.2
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.531,
+      "val_loss": 3.4663,
+      "val_perplexity": 32.017,
+      "elapsed_s": 221.5
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3447,
+      "val_loss": 3.3276,
+      "val_perplexity": 27.871,
+      "elapsed_s": 277.5
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2122,
+      "val_loss": 3.2559,
+      "val_perplexity": 25.943,
+      "elapsed_s": 334.6
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1124,
+      "val_loss": 3.124,
+      "val_perplexity": 22.737,
+      "elapsed_s": 391.2
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0304,
+      "val_loss": 3.0901,
+      "val_perplexity": 21.979,
+      "elapsed_s": 448.1
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.9821,
+      "val_loss": 3.0246,
+      "val_perplexity": 20.585,
+      "elapsed_s": 505.1
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9452,
+      "val_loss": 3.0176,
+      "val_perplexity": 20.442,
+      "elapsed_s": 565.3
+    }
+  ],
+  "final_train_loss": 2.9452,
+  "final_val_loss": 3.0176,
+  "final_val_perplexity": 20.442,
+  "best_val_loss": 3.01761425336202,
+  "tokens_per_second": 8839.8,
+  "wall_seconds": 565.3,
+  "peak_memory_mb": 550.0,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She loved to help her room and her mommy. One day, they played in the park for a small house. Lily was playing in the park and his friends.\nAs they got to the park, Lily's mommy gave her a new toy. They played",
+    "Lily saw a big red car. She took it closer to her. It was so big and shiny.\n\"Butch, Lily, it do you doing?\" she asked.\n\"What happened?\" her mom said. \"Please, it's not yours. We can not open it?\"\n",
+    "The little boy was very proud of his friends.\n<|endoftext|>"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "name": "tied-embeddings",
+  "hypothesis": "Sharing input and output embedding weights halves the embedding budget. Tests whether the saving costs quality.",
+  "config": {
+    "name": "tied-embeddings",
+    "hypothesis": "Sharing input and output embedding weights halves the embedding budget. Tests whether the saving costs quality.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": true,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 11525376,
+    "embedding": 884736,
+    "output_head": 0,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5966,
+      "val_loss": 4.4294,
+      "val_perplexity": 83.879,
+      "elapsed_s": 66.9
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.1339,
+      "val_loss": 3.9638,
+      "val_perplexity": 52.659,
+      "elapsed_s": 132.6
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7827,
+      "val_loss": 3.6702,
+      "val_perplexity": 39.26,
+      "elapsed_s": 202.1
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5477,
+      "val_loss": 3.4818,
+      "val_perplexity": 32.52,
+      "elapsed_s": 271.1
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3642,
+      "val_loss": 3.3487,
+      "val_perplexity": 28.465,
+      "elapsed_s": 340.1
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.241,
+      "val_loss": 3.2866,
+      "val_perplexity": 26.751,
+      "elapsed_s": 409.4
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1429,
+      "val_loss": 3.1507,
+      "val_perplexity": 23.352,
+      "elapsed_s": 483.4
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0649,
+      "val_loss": 3.1239,
+      "val_perplexity": 22.734,
+      "elapsed_s": 553.6
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.02,
+      "val_loss": 3.0596,
+      "val_perplexity": 21.318,
+      "elapsed_s": 622.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9852,
+      "val_loss": 3.0517,
+      "val_perplexity": 21.151,
+      "elapsed_s": 702.1
+    }
+  ],
+  "final_train_loss": 2.9852,
+  "final_val_loss": 3.0517,
+  "final_val_perplexity": 21.151,
+  "best_val_loss": 3.051688861846924,
+  "tokens_per_second": 7117.4,
+  "wall_seconds": 702.1,
+  "peak_memory_mb": 377.3,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She loved to help her room and her special. One day, she saw a cow of a big porns. She wanted to go on her room and saw a pile of her friend. She held her and put it back to her to",
+    "Lily saw a big dog. The dog took the dog and Lily. It was missors and a new dog. It was loud, like the dog and Lily. She liked the dog.\n\"Hi, be careful, I am very pretty!\" Lily said, \"We are not eas!\"\n",
+    "The little boy was very hungry and he was so happy. He knew the little mouse, \"I will be scared now?\" \nThe little boy smiled and said, \"Thank you, Max. I love you, but I can go to the little girl.\" \nThe little girl nodded and thanked the girl. She thanked her"
+  ]
+}

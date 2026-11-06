@@ -1,0 +1,144 @@
+{
+  "name": "layers-4",
+  "hypothesis": "Intermediate depth.",
+  "config": {
+    "name": "layers-4",
+    "hypothesis": "Intermediate depth.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 4,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 8765184,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 7094016
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5192,
+      "val_loss": 4.329,
+      "val_perplexity": 75.872,
+      "elapsed_s": 60.9
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0302,
+      "val_loss": 3.8717,
+      "val_perplexity": 48.025,
+      "elapsed_s": 122.3
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7073,
+      "val_loss": 3.613,
+      "val_perplexity": 37.078,
+      "elapsed_s": 186.9
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.4964,
+      "val_loss": 3.4356,
+      "val_perplexity": 31.051,
+      "elapsed_s": 243.5
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3254,
+      "val_loss": 3.3116,
+      "val_perplexity": 27.428,
+      "elapsed_s": 313.1
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2118,
+      "val_loss": 3.2629,
+      "val_perplexity": 26.125,
+      "elapsed_s": 378.1
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1237,
+      "val_loss": 3.1332,
+      "val_perplexity": 22.946,
+      "elapsed_s": 439.9
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0519,
+      "val_loss": 3.1119,
+      "val_perplexity": 22.463,
+      "elapsed_s": 501.5
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0124,
+      "val_loss": 3.0548,
+      "val_perplexity": 21.217,
+      "elapsed_s": 567.1
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9798,
+      "val_loss": 3.0502,
+      "val_perplexity": 21.121,
+      "elapsed_s": 621.5
+    }
+  ],
+  "final_train_loss": 2.9798,
+  "final_val_loss": 3.0502,
+  "final_val_perplexity": 21.121,
+  "best_val_loss": 3.050249195098877,
+  "tokens_per_second": 8040.4,
+  "wall_seconds": 621.5,
+  "peak_memory_mb": 304.5,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play all around Lily. One day, Lily's mommy told her to play outside with her to play with the sandwe.\n\"Wow, Lily. I will make us too fast.\" Lily said. \"OK,",
+    "Lily saw a big dog. The dog took the dog and Lily. It was hurt and not want to play with her. She said, \"No, can't be not!\" The dog was not nice. It was too far away from Tom.\n\"I'm sorry, Sam. I found it's not",
+    "The little boy was very happy that he had a friend. The little boy was so happy.\n<|endoftext|>"
+  ]
+}

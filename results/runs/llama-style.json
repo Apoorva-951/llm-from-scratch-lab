@@ -1,0 +1,144 @@
+{
+  "name": "llama-style",
+  "hypothesis": "All Llama-style choices together: RMSNorm, RoPE, SwiGLU and grouped-query attention, against the GPT-style baseline.",
+  "config": {
+    "name": "llama-style",
+    "hypothesis": "All Llama-style choices together: RMSNorm, RoPE, SwiGLU and grouped-query attention, against the GPT-style baseline.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "swiglu",
+      "norm": "rmsnorm",
+      "position": "rope",
+      "n_kv_heads": 2,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 11017344,
+    "embedding": 786432,
+    "output_head": 786432,
+    "transformer": 9444480
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.776,
+      "val_loss": 4.443,
+      "val_perplexity": 85.03,
+      "elapsed_s": 74.3
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 3.9539,
+      "val_loss": 3.6821,
+      "val_perplexity": 39.728,
+      "elapsed_s": 150.4
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.4385,
+      "val_loss": 3.3135,
+      "val_perplexity": 27.482,
+      "elapsed_s": 228.8
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.1674,
+      "val_loss": 3.0983,
+      "val_perplexity": 22.161,
+      "elapsed_s": 312.4
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 2.9668,
+      "val_loss": 2.9509,
+      "val_perplexity": 19.123,
+      "elapsed_s": 389.4
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 2.8342,
+      "val_loss": 2.8861,
+      "val_perplexity": 17.924,
+      "elapsed_s": 465.1
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 2.7346,
+      "val_loss": 2.7519,
+      "val_perplexity": 15.672,
+      "elapsed_s": 542.8
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 2.6563,
+      "val_loss": 2.7191,
+      "val_perplexity": 15.166,
+      "elapsed_s": 620.4
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.6137,
+      "val_loss": 2.6649,
+      "val_perplexity": 14.367,
+      "elapsed_s": 695.1
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.5807,
+      "val_loss": 2.6573,
+      "val_perplexity": 14.258,
+      "elapsed_s": 765.9
+    }
+  ],
+  "final_train_loss": 2.5807,
+  "final_val_loss": 2.6573,
+  "final_val_perplexity": 14.258,
+  "best_val_loss": 2.65732057094574,
+  "tokens_per_second": 6524.5,
+  "wall_seconds": 765.9,
+  "peak_memory_mb": 509.3,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was three years old and loved exploring all around her. One day, she went to the park and saw a beautiful tree. She wanted to go on an things and see what was wrong.\nOn the trip, Lily saw an old man playing with",
+    "Lily saw a big dog with a brown bear and a cat named Max. Tom wanted to play with Sam, so much fun.\nTimmy, Timmy saw a big dog with colorful ball. Timmy said, \"Hi, Max! I'm Tom. I wanted to play with it.\" Tim said, \"That is",
+    "The little boy was very proud of his new teaching her. Even though, she was feeling extra more ashamed.\n<|endoftext|>"
+  ]
+}

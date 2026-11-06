@@ -1,0 +1,275 @@
+{
+  "act-relu": {
+    "hypothesis": "ReLU instead of GELU: a hard zero below zero rather than a smooth gate. Cheaper, and the classic comparison.",
+    "final_val_loss": 3.0389,
+    "final_val_perplexity": 20.882,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 8633.6,
+    "wall_seconds": 578.8
+  },
+  "act-swiglu": {
+    "hypothesis": "SwiGLU: a gated MLP as used by Llama, with hidden width scaled by 2/3 to keep parameters comparable.",
+    "final_val_loss": 3.0176,
+    "final_val_perplexity": 20.442,
+    "parameters": {
+      "total": 12300288,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10629120
+    },
+    "tokens_per_second": 8839.8,
+    "wall_seconds": 565.3
+  },
+  "baseline": {
+    "hypothesis": "GPT-style reference: GELU, LayerNorm, learned positions, 6 heads, 6 layers.",
+    "final_val_loss": 3.0374,
+    "final_val_perplexity": 20.85,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6925.1,
+    "wall_seconds": 721.6
+  },
+  "context-128": {
+    "hypothesis": "Half the context. Attention cost is quadratic in sequence length, so throughput should rise while long-range structure is lost.",
+    "final_val_loss": 2.7123,
+    "final_val_perplexity": 15.064,
+    "parameters": {
+      "total": 12262656,
+      "embedding": 835584,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 7280.0,
+    "wall_seconds": 686.7
+  },
+  "context-512": {
+    "hypothesis": "Double the context. Quadratic attention cost should reduce throughput; TinyStories are short, so the benefit may be small.",
+    "final_val_loss": 3.195,
+    "final_val_perplexity": 24.41,
+    "parameters": {
+      "total": 12410112,
+      "embedding": 983040,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6468.8,
+    "wall_seconds": 772.5
+  },
+  "control-no-causal-mask": {
+    "hypothesis": "Removing the causal mask lets the model attend to future tokens, so next-token prediction becomes trivial. Validation loss should collapse far below baseline. If it does not, masking is broken.",
+    "final_val_loss": 0.0244,
+    "final_val_perplexity": 1.025,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6492.3,
+    "wall_seconds": 769.7
+  },
+  "control-no-position": {
+    "hypothesis": "Without positional information attention is permutation-invariant, so the model can only learn token frequencies. Loss should worsen clearly against baseline.",
+    "final_val_loss": 3.1511,
+    "final_val_perplexity": 23.362,
+    "parameters": {
+      "total": 12213504,
+      "embedding": 786432,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 5919.4,
+    "wall_seconds": 844.2
+  },
+  "gqa-2kv": {
+    "hypothesis": "Grouped-query attention: 6 query heads sharing 2 key/value heads, cutting KV projection size and memory.",
+    "final_val_loss": 3.0617,
+    "final_val_perplexity": 21.363,
+    "parameters": {
+      "total": 11132160,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 9460992
+    },
+    "tokens_per_second": 5404.0,
+    "wall_seconds": 924.7
+  },
+  "heads-1": {
+    "hypothesis": "One head: same parameter count, but a single attention pattern per layer instead of six specialised subspaces.",
+    "final_val_loss": 2.9238,
+    "final_val_perplexity": 18.613,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 7734.3,
+    "wall_seconds": 646.1
+  },
+  "heads-12": {
+    "hypothesis": "Twelve heads: more subspaces, each of dimension 32 instead of 64. Tests whether head count or per-head width matters more.",
+    "final_val_loss": 3.0764,
+    "final_val_perplexity": 21.681,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 5277.3,
+    "wall_seconds": 946.9
+  },
+  "heads-2": {
+    "hypothesis": "Two heads - intermediate point in the head-count sweep.",
+    "final_val_loss": 2.9653,
+    "final_val_perplexity": 19.401,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6093.3,
+    "wall_seconds": 820.1
+  },
+  "layers-10": {
+    "hypothesis": "Deeper at the same width. More parameters and more compute per token, so throughput should drop.",
+    "final_val_loss": 3.0512,
+    "final_val_perplexity": 21.14,
+    "parameters": {
+      "total": 19405056,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 17733888
+    },
+    "tokens_per_second": 3930.4,
+    "wall_seconds": 1271.4
+  },
+  "layers-2": {
+    "hypothesis": "Shallow: 2 layers. Tests how much depth contributes at fixed width.",
+    "final_val_loss": 3.0859,
+    "final_val_perplexity": 21.887,
+    "parameters": {
+      "total": 5218560,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 3547392
+    },
+    "tokens_per_second": 16309.1,
+    "wall_seconds": 306.4
+  },
+  "layers-4": {
+    "hypothesis": "Intermediate depth.",
+    "final_val_loss": 3.0502,
+    "final_val_perplexity": 21.121,
+    "parameters": {
+      "total": 8765184,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 7094016
+    },
+    "tokens_per_second": 8040.4,
+    "wall_seconds": 621.5
+  },
+  "llama-style": {
+    "hypothesis": "All Llama-style choices together: RMSNorm, RoPE, SwiGLU and grouped-query attention, against the GPT-style baseline.",
+    "final_val_loss": 2.6573,
+    "final_val_perplexity": 14.258,
+    "parameters": {
+      "total": 11017344,
+      "embedding": 786432,
+      "output_head": 786432,
+      "transformer": 9444480
+    },
+    "tokens_per_second": 6524.5,
+    "wall_seconds": 765.9
+  },
+  "norm-rmsnorm": {
+    "hypothesis": "RMSNorm drops mean subtraction and the shift parameter. Tests whether re-centring contributes anything at this scale.",
+    "final_val_loss": 3.0398,
+    "final_val_perplexity": 20.902,
+    "parameters": {
+      "total": 12306816,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10635648
+    },
+    "tokens_per_second": 8574.3,
+    "wall_seconds": 582.8
+  },
+  "pos-rope": {
+    "hypothesis": "Rotary embeddings inject relative position inside attention and remove the learned position table entirely.",
+    "final_val_loss": 2.7937,
+    "final_val_perplexity": 16.342,
+    "parameters": {
+      "total": 12213504,
+      "embedding": 786432,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6161.7,
+    "wall_seconds": 811.0
+  },
+  "tied-embeddings": {
+    "hypothesis": "Sharing input and output embedding weights halves the embedding budget. Tests whether the saving costs quality.",
+    "final_val_loss": 3.0517,
+    "final_val_perplexity": 21.151,
+    "parameters": {
+      "total": 11525376,
+      "embedding": 884736,
+      "output_head": 0,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 7117.4,
+    "wall_seconds": 702.1
+  },
+  "vocab-16384": {
+    "hypothesis": "Vocabulary 16384: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "final_val_loss": 3.0829,
+    "final_val_perplexity": 21.822,
+    "parameters": {
+      "total": 18896640,
+      "embedding": 4177152,
+      "output_head": 4078848,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 5907.5,
+    "wall_seconds": 845.9
+  },
+  "vocab-2048": {
+    "hypothesis": "Vocabulary 2048: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "final_val_loss": 3.0374,
+    "final_val_perplexity": 20.85,
+    "parameters": {
+      "total": 12311808,
+      "embedding": 884736,
+      "output_head": 786432,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 6588.2,
+    "wall_seconds": 758.5
+  },
+  "vocab-8192": {
+    "hypothesis": "Vocabulary 8192: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "final_val_loss": 3.1036,
+    "final_val_perplexity": 22.277,
+    "parameters": {
+      "total": 17030400,
+      "embedding": 3244032,
+      "output_head": 3145728,
+      "transformer": 10640640
+    },
+    "tokens_per_second": 5949.7,
+    "wall_seconds": 839.9
+  }
+}

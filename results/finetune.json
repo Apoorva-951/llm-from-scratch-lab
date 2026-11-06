@@ -1,0 +1,108 @@
+{
+  "before_adaptation": {
+    "new_domain_loss": 5.9043,
+    "original_domain_loss": 3.0099
+  },
+  "runs": {
+    "full": {
+      "strategy": "full",
+      "parameters": {
+        "total": 12311808,
+        "trainable": 12311808,
+        "frozen": 0,
+        "trainable_pct": 100.0,
+        "optimiser_state_mb": 98.49
+      },
+      "history": [
+        {
+          "tokens_seen": 299008,
+          "new_domain_loss": 4.3691,
+          "original_domain_loss": 4.7455
+        },
+        {
+          "tokens_seen": 598016,
+          "new_domain_loss": 4.1625,
+          "original_domain_loss": 4.8224
+        },
+        {
+          "tokens_seen": 897024,
+          "new_domain_loss": 4.0297,
+          "original_domain_loss": 5.1862
+        },
+        {
+          "tokens_seen": 1196032,
+          "new_domain_loss": 3.9167,
+          "original_domain_loss": 5.2763
+        },
+        {
+          "tokens_seen": 1495040,
+          "new_domain_loss": 3.8528,
+          "original_domain_loss": 5.355
+        },
+        {
+          "tokens_seen": 1499136,
+          "new_domain_loss": 3.8425,
+          "original_domain_loss": 5.2495
+        }
+      ],
+      "final_new_domain_loss": 3.8425,
+      "final_original_domain_loss": 5.2495,
+      "wall_seconds": 330.7,
+      "tokens_per_second": 4533.9,
+      "samples": [
+        "It was a\nbeladies. Pon\u2019s recommon\u2019s addition for the wound, and that it would\nhad been gone to and murdeative to the world.\n\n\u201cYou must be suffered by the morning, and I",
+        "The gentleman is the\nbarflation from the law. \u2018Ha!\u2019 cried Holmes, and a few minutes,\u2019s \u2018to\nmy couple.\u2019 I had placed upon the room.\u2019\n\n\u201c\ufffd"
+      ]
+    },
+    "lora": {
+      "strategy": "lora",
+      "parameters": {
+        "total": 12385536,
+        "trainable": 73728,
+        "frozen": 12311808,
+        "trainable_pct": 0.595,
+        "optimiser_state_mb": 0.59
+      },
+      "history": [
+        {
+          "tokens_seen": 299008,
+          "new_domain_loss": 5.0847,
+          "original_domain_loss": 3.5428
+        },
+        {
+          "tokens_seen": 598016,
+          "new_domain_loss": 4.9946,
+          "original_domain_loss": 3.6511
+        },
+        {
+          "tokens_seen": 897024,
+          "new_domain_loss": 4.9481,
+          "original_domain_loss": 3.7661
+        },
+        {
+          "tokens_seen": 1196032,
+          "new_domain_loss": 4.9066,
+          "original_domain_loss": 3.9185
+        },
+        {
+          "tokens_seen": 1495040,
+          "new_domain_loss": 4.8878,
+          "original_domain_loss": 3.8567
+        },
+        {
+          "tokens_seen": 1499136,
+          "new_domain_loss": 4.8898,
+          "original_domain_loss": 3.8705
+        }
+      ],
+      "final_new_domain_loss": 4.8898,
+      "final_original_domain_loss": 3.8705,
+      "wall_seconds": 254.4,
+      "tokens_per_second": 5892.9,
+      "samples": [
+        "It was a good thing,ing to him and that he had been a\nten insit up the little girlses in joy to be.\n\n\u201c\u201cThere,\u201d. He asked in the little her mom for the big, he was that\ncilitherries of the world",
+        "The gentleman and he\nmed, and he was apillabooked. He took the ent, and and\nthday. Ubilwards when he, he saw thisly in the ground to gets.\n\nFread out, and the tray,,"
+      ]
+    }
+  }
+}

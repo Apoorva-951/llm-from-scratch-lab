@@ -1,0 +1,144 @@
+{
+  "name": "pos-rope",
+  "hypothesis": "Rotary embeddings inject relative position inside attention and remove the learned position table entirely.",
+  "config": {
+    "name": "pos-rope",
+    "hypothesis": "Rotary embeddings inject relative position inside attention and remove the learned position table entirely.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "rope",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12213504,
+    "embedding": 786432,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.4711,
+      "val_loss": 4.2073,
+      "val_perplexity": 67.177,
+      "elapsed_s": 76.9
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 3.8581,
+      "val_loss": 3.6614,
+      "val_perplexity": 38.917,
+      "elapsed_s": 153.1
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.4651,
+      "val_loss": 3.3656,
+      "val_perplexity": 28.952,
+      "elapsed_s": 229.6
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.2427,
+      "val_loss": 3.1957,
+      "val_perplexity": 24.426,
+      "elapsed_s": 305.2
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.0717,
+      "val_loss": 3.0692,
+      "val_perplexity": 21.525,
+      "elapsed_s": 381.9
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 2.9611,
+      "val_loss": 3.0132,
+      "val_perplexity": 20.352,
+      "elapsed_s": 471.3
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 2.8706,
+      "val_loss": 2.8798,
+      "val_perplexity": 17.811,
+      "elapsed_s": 547.2
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 2.7948,
+      "val_loss": 2.8553,
+      "val_perplexity": 17.38,
+      "elapsed_s": 636.8
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.7529,
+      "val_loss": 2.7998,
+      "val_perplexity": 16.441,
+      "elapsed_s": 728.0
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.721,
+      "val_loss": 2.7937,
+      "val_perplexity": 16.342,
+      "elapsed_s": 811.0
+    }
+  ],
+  "final_train_loss": 2.721,
+  "final_val_loss": 2.7937,
+  "final_val_perplexity": 16.342,
+  "best_val_loss": 2.793746487299601,
+  "tokens_per_second": 6161.7,
+  "wall_seconds": 811.0,
+  "peak_memory_mb": 393.8,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play outside. One day, she saw a cone of a small cat named Benny. He looked at the boy, and started to move. Timmy's mom said, \"Lily, you can't get one to the ground",
+    "Lily saw a big dog with a lot. She wanted to play with it too. But it was too fast. She tried to hurt the dog, but it was. Her dog came to the dog.\n\"Hey, can I play with the dog?\" Lily asked.\n\"Sure, \"Sure!\"",
+    "The little boy was very proud of his hurf. He learned that it can always be brave and that the little boy is very happy to be fun. He knew he would always be happy again, but the little boy was not the best of friends.\n<|endoftext|>"
+  ]
+}

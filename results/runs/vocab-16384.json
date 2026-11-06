@@ -1,0 +1,144 @@
+{
+  "name": "vocab-16384",
+  "hypothesis": "Vocabulary 16384: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+  "config": {
+    "name": "vocab-16384",
+    "hypothesis": "Vocabulary 16384: larger vocabularies compress text into fewer tokens but spend more parameters on embeddings.",
+    "model": {
+      "vocab_size": 10622,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-16384.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 18896640,
+    "embedding": 4177152,
+    "output_head": 4078848,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 6.0539,
+      "val_loss": 4.4004,
+      "val_perplexity": 81.485,
+      "elapsed_s": 84.9
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0721,
+      "val_loss": 3.974,
+      "val_perplexity": 53.194,
+      "elapsed_s": 169.7
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7779,
+      "val_loss": 3.7403,
+      "val_perplexity": 42.111,
+      "elapsed_s": 252.0
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5642,
+      "val_loss": 3.4794,
+      "val_perplexity": 32.442,
+      "elapsed_s": 332.3
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3778,
+      "val_loss": 3.3997,
+      "val_perplexity": 29.954,
+      "elapsed_s": 424.6
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2602,
+      "val_loss": 3.264,
+      "val_perplexity": 26.154,
+      "elapsed_s": 506.0
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1756,
+      "val_loss": 3.2227,
+      "val_perplexity": 25.096,
+      "elapsed_s": 585.9
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0833,
+      "val_loss": 3.1209,
+      "val_perplexity": 22.668,
+      "elapsed_s": 666.7
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0644,
+      "val_loss": 3.1031,
+      "val_perplexity": 22.266,
+      "elapsed_s": 748.0
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 3.0043,
+      "val_loss": 3.0829,
+      "val_perplexity": 21.822,
+      "elapsed_s": 845.9
+    }
+  ],
+  "final_train_loss": 3.0043,
+  "final_val_loss": 3.0829,
+  "final_val_perplexity": 21.822,
+  "best_val_loss": 3.0829238335291547,
+  "tokens_per_second": 5907.5,
+  "wall_seconds": 845.9,
+  "peak_memory_mb": 688.3,
+  "samples": [
+    "Once upon a time there were two friends. They all around with their friends.\n<|endoftext|>",
+    "Lily saw a big dog. She did not take turns over to the slide. She heard Ben and Lily sad. She saw the dog and saw a big dog. It was a big cat. She wanted to touch it.\n\"What are you doing?\" Lily said. \"What is that bad. It is",
+    "The little boy was very excited.\nThe little boy smiled and said he was sad. He said he didn't know what happened. He said he was very good.\nThe boy was always happy because he knew he could do things in his house. He promised to keep his friends. \nFrom that day on, they"
+  ]
+}

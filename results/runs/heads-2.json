@@ -1,0 +1,144 @@
+{
+  "name": "heads-2",
+  "hypothesis": "Two heads - intermediate point in the head-count sweep.",
+  "config": {
+    "name": "heads-2",
+    "hypothesis": "Two heads - intermediate point in the head-count sweep.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 2,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": null,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 12311808,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 10640640
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.517,
+      "val_loss": 4.3219,
+      "val_perplexity": 75.335,
+      "elapsed_s": 63.0
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0364,
+      "val_loss": 3.8775,
+      "val_perplexity": 48.304,
+      "elapsed_s": 139.2
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.6894,
+      "val_loss": 3.5746,
+      "val_perplexity": 35.679,
+      "elapsed_s": 227.2
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.4466,
+      "val_loss": 3.3819,
+      "val_perplexity": 29.427,
+      "elapsed_s": 308.3
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.263,
+      "val_loss": 3.249,
+      "val_perplexity": 25.764,
+      "elapsed_s": 390.2
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.1429,
+      "val_loss": 3.1929,
+      "val_perplexity": 24.359,
+      "elapsed_s": 472.7
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.0491,
+      "val_loss": 3.0563,
+      "val_perplexity": 21.248,
+      "elapsed_s": 556.3
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 2.9731,
+      "val_loss": 3.0307,
+      "val_perplexity": 20.712,
+      "elapsed_s": 644.2
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 2.928,
+      "val_loss": 2.9712,
+      "val_perplexity": 19.515,
+      "elapsed_s": 733.3
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.8959,
+      "val_loss": 2.9653,
+      "val_perplexity": 19.401,
+      "elapsed_s": 820.1
+    }
+  ],
+  "final_train_loss": 2.8959,
+  "final_val_loss": 2.9653,
+  "final_val_perplexity": 19.401,
+  "best_val_loss": 2.965309508641561,
+  "tokens_per_second": 6093.3,
+  "wall_seconds": 820.1,
+  "peak_memory_mb": 393.1,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play outside. One day, she saw a cow for a small cat named Lily. She looked at the boy, and started to move. She wanted to help it, but she would be dull and be careful to",
+    "Lily saw a boy named Lily. She took her toy car and got very much. She asked her dad, \"By, I am sorry, Ben. I did not mean to the ball. But he was not too far away.\"\nBen and Benny did not want to play with the ball again. They",
+    "The little boy was very happy. He thanked his friend, and his friends decided to have some more. Now the story is that you can make the nerse each other and more than each other.\n<|endoftext|>"
+  ]
+}

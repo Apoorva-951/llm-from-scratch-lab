@@ -1,0 +1,144 @@
+{
+  "name": "gqa-2kv",
+  "hypothesis": "Grouped-query attention: 6 query heads sharing 2 key/value heads, cutting KV projection size and memory.",
+  "config": {
+    "name": "gqa-2kv",
+    "hypothesis": "Grouped-query attention: 6 query heads sharing 2 key/value heads, cutting KV projection size and memory.",
+    "model": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "emb_dim": 384,
+      "n_heads": 6,
+      "n_layers": 6,
+      "drop_rate": 0.0,
+      "qkv_bias": false,
+      "activation": "gelu",
+      "norm": "layernorm",
+      "position": "learned",
+      "n_kv_heads": 2,
+      "tie_embeddings": false,
+      "causal_mask": true
+    },
+    "train": {
+      "train_tokens": 5000000,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_frac": 0.05,
+      "grad_clip": 1.0,
+      "eval_every_tokens": 500000,
+      "eval_batches": 30,
+      "seed": 1234,
+      "device": "auto",
+      "compile_model": false
+    },
+    "data": {
+      "train_path": "data/tinystories-train.txt",
+      "val_path": "data/tinystories-valid.txt",
+      "tokenizer_path": "data/tokenizer-2048.json",
+      "max_train_chars": 40000000,
+      "max_val_chars": 4000000
+    }
+  },
+  "parameters": {
+    "total": 11132160,
+    "embedding": 884736,
+    "output_head": 786432,
+    "transformer": 9460992
+  },
+  "device": "mps",
+  "history": [
+    {
+      "step": 122,
+      "tokens_seen": 499712,
+      "train_loss": 5.5081,
+      "val_loss": 4.3266,
+      "val_perplexity": 75.687,
+      "elapsed_s": 97.5
+    },
+    {
+      "step": 244,
+      "tokens_seen": 999424,
+      "train_loss": 4.0462,
+      "val_loss": 3.8925,
+      "val_perplexity": 49.035,
+      "elapsed_s": 191.0
+    },
+    {
+      "step": 366,
+      "tokens_seen": 1499136,
+      "train_loss": 3.7247,
+      "val_loss": 3.6251,
+      "val_perplexity": 37.53,
+      "elapsed_s": 274.5
+    },
+    {
+      "step": 488,
+      "tokens_seen": 1998848,
+      "train_loss": 3.5102,
+      "val_loss": 3.4496,
+      "val_perplexity": 31.487,
+      "elapsed_s": 363.1
+    },
+    {
+      "step": 610,
+      "tokens_seen": 2498560,
+      "train_loss": 3.3399,
+      "val_loss": 3.3278,
+      "val_perplexity": 27.878,
+      "elapsed_s": 467.6
+    },
+    {
+      "step": 732,
+      "tokens_seen": 2998272,
+      "train_loss": 3.2245,
+      "val_loss": 3.2795,
+      "val_perplexity": 26.563,
+      "elapsed_s": 570.1
+    },
+    {
+      "step": 854,
+      "tokens_seen": 3497984,
+      "train_loss": 3.1386,
+      "val_loss": 3.1488,
+      "val_perplexity": 23.307,
+      "elapsed_s": 661.1
+    },
+    {
+      "step": 976,
+      "tokens_seen": 3997696,
+      "train_loss": 3.0658,
+      "val_loss": 3.1253,
+      "val_perplexity": 22.768,
+      "elapsed_s": 749.3
+    },
+    {
+      "step": 1098,
+      "tokens_seen": 4497408,
+      "train_loss": 3.0264,
+      "val_loss": 3.0676,
+      "val_perplexity": 21.491,
+      "elapsed_s": 837.8
+    },
+    {
+      "step": 1220,
+      "tokens_seen": 4997120,
+      "train_loss": 2.9933,
+      "val_loss": 3.0617,
+      "val_perplexity": 21.363,
+      "elapsed_s": 924.7
+    }
+  ],
+  "final_train_loss": 2.9933,
+  "final_val_loss": 3.0617,
+  "final_val_perplexity": 21.363,
+  "best_val_loss": 3.061660575866699,
+  "tokens_per_second": 5404.0,
+  "wall_seconds": 924.7,
+  "peak_memory_mb": 386.7,
+  "samples": [
+    "Once upon a time there was a little girl named Lily. She was very hungry and loved to play in her toys. One day, Lily's mom saw a big, a big tree near her house. She opened the table and saw a man who was very happy. She asked her that it was bad. Lily said",
+    "Lily saw a little boy named Lily. She loved to play outside. One day, Lily's mommy called over to her to go home. Lily's mom told her to be careful and not for her to eat her what she wanted to go and play with her toys anymore. After a while, Lily's mommy said",
+    "The little boy was very hungry. He thanked his friend, but then the little boy stopped. He thought that the managed to his mom to help. He knew he would help him happy. He enjoyed the boy and even more careful.\n<|endoftext|>"
+  ]
+}
